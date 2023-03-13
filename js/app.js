@@ -485,6 +485,11 @@
     };
     const da = new DynamicAdapt("max");
     da.init();
+    const calc = document.querySelector(".calculator-header");
+    calc.addEventListener("click", calculatorAction);
+    function calculatorAction(e) {
+        console.log(e.target);
+    }
     window["FLS"] = true;
     isWebp();
     menuInit();

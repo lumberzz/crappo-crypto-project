@@ -410,6 +410,100 @@ h6 {
   height: 2.5rem;
 }
 
+.menu__item {
+  position: relative;
+}
+
+.menu__item::before {
+  font-size: 0.875rem;
+  position: absolute;
+  top: 50%;
+  right: 20%;
+  -webkit-transform: translateY(-60%);
+      -ms-transform: translateY(-60%);
+          transform: translateY(-60%);
+}
+
+.octicon-chevrow-stem {
+  visibility: hidden;
+}
+
+.octicon {
+  margin-left: 0.4375rem;
+  -webkit-transform: translateX(-7px);
+      -ms-transform: translateX(-7px);
+          transform: translateX(-7px);
+}
+
+@-webkit-keyframes chevron {
+  0% {
+    -webkit-transform: scaleX(0.4);
+            transform: scaleX(0.4);
+    -webkit-transform-origin: 0% 0%;
+            transform-origin: 0% 0%;
+  }
+
+  100% {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+    -webkit-transform-origin: 0% 0%;
+            transform-origin: 0% 0%;
+  }
+}
+
+@keyframes chevron {
+  0% {
+    -webkit-transform: scaleX(0.4);
+            transform: scaleX(0.4);
+    -webkit-transform-origin: 0% 0%;
+            transform-origin: 0% 0%;
+  }
+
+  100% {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+    -webkit-transform-origin: 0% 0%;
+            transform-origin: 0% 0%;
+  }
+}
+
+@-webkit-keyframes stick {
+  0% {
+    -webkit-transform: scaleX(0.4);
+            transform: scaleX(0.4);
+    -webkit-transform-origin: 100% 100%;
+            transform-origin: 100% 100%;
+  }
+
+  100% {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+    -webkit-transform-origin: 100% 100%;
+            transform-origin: 100% 100%;
+  }
+}
+
+@keyframes stick {
+  0% {
+    -webkit-transform: scaleX(0.4);
+            transform: scaleX(0.4);
+    -webkit-transform-origin: 100% 100%;
+            transform-origin: 100% 100%;
+  }
+
+  100% {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+    -webkit-transform-origin: 100% 100%;
+            transform-origin: 100% 100%;
+  }
+}
+
+.sliding-arrow:hover {
+  -webkit-animation: scale-in-hor-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: scale-in-hor-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
 .blue-button {
   position: relative;
   display: block;
@@ -585,6 +679,30 @@ a:active {
   -webkit-column-gap: 0.5rem;
      -moz-column-gap: 0.5rem;
           column-gap: 0.5rem;
+}
+
+@-webkit-keyframes scale-up-center {
+  0% {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes scale-up-center {
+  0% {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
 }
 
 #graph-text-block {
@@ -1366,6 +1484,8 @@ a:active {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -1375,12 +1495,26 @@ a:active {
   -webkit-column-gap: 3rem;
      -moz-column-gap: 3rem;
           column-gap: 3rem;
+  row-gap: 1.875rem;
+}
+
+.calculator-header__input-fields {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-column-gap: 1.25rem;
+     -moz-column-gap: 1.25rem;
+          column-gap: 1.25rem;
+  border-bottom: 1px solid #E0E0E0;
 }
 
 .calculator-header__hashrate-input {
   max-width: 25.1875rem;
   width: 100%;
-  border-bottom: 1px solid #E0E0E0;
   font-weight: 400;
   font-size: 1.25rem;
   line-height: 150%;
@@ -1388,10 +1522,11 @@ a:active {
 
 .calculator-header__dropdown-button {
   position: relative;
-  border-bottom: 1px solid #E0E0E0;
   font-weight: 400;
   font-size: 1.25rem;
   line-height: 150%;
+  border: 1px solid #E0E0E0;
+  border-bottom: none;
   color: rgb(13, 13, 43);
   max-width: 12.5rem;
   width: 100%;
@@ -1405,6 +1540,7 @@ a:active {
 .calculator-header__dropdown-button {
   position: relative;
   text-align: left;
+  width: 3.125rem;
 }
 
 .calculator-header__dropdown-button::after {
@@ -1418,9 +1554,10 @@ a:active {
 
 .calculator-header__body {
   position: absolute;
-  z-index: 5;
-  width: 12.5rem;
-  border: 1px solid #E0E0E0;
+  z-index: 10;
+  background-color: rgb(249, 249, 249);
+  width: 3.125rem;
+  border: 1px solid rgb(224, 224, 224);
   border-top: none;
 }
 
@@ -1457,8 +1594,8 @@ a:active {
   max-width: 58.875rem;
   width: 100%;
   background-color: #FFFFFF;
-  -webkit-box-shadow: 0px 80px 40px rgba(57, 23, 119, 0.05);
-          box-shadow: 0px 80px 40px rgba(57, 23, 119, 0.05);
+  -webkit-box-shadow: 0px 80px 40px rgba(57, 23, 118, 0.05);
+          box-shadow: 0px 80px 40px rgba(57, 23, 118, 0.05);
   border-radius: 0px 0px 16px 16px;
 }
 
@@ -1880,6 +2017,45 @@ a:active {
   white-space: nowrap;
 }
 
+@-webkit-keyframes slide-left {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  100% {
+    -webkit-transform: translateX(-1.4375rem);
+    transform: translateX(-1.4375rem);
+  }
+}
+
+@keyframes slide-left {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  100% {
+    -webkit-transform: translateX(-1.4375rem);
+    transform: translateX(-1.4375rem);
+  }
+}
+
+tr {
+  position: relative;
+}
+
+#table-row:hover {
+  position: absolute;
+  left: -2.5rem;
+  z-index: 100;
+  background: #4610AD;
+  border-radius: 16px;
+  padding: 0 3.25rem 0 2.5rem;
+  -webkit-animation: slide-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
 .coin-item__label {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2088,6 +2264,12 @@ a:active {
   padding: 0.875rem 2rem;
 }
 
+@media (min-width: 61.99875em) {
+  .octicon {
+    display: none;
+  }
+}
+
 @media (max-width: 1230.98px) {
   .body-footer__logo {
     margin-top: -0.375rem;
@@ -2165,7 +2347,6 @@ a:active {
     padding: 0.5rem 1rem 0.5em 0;
     margin: 0.25rem;
     max-width: 12.5rem;
-    border-bottom: 2px solid rgb(54, 113, 233);
   }
 
   .spollers__body:not(:last-child) {
@@ -2608,18 +2789,15 @@ a:active {
   }
 
   .calculator-header {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
-    row-gap: 1.875rem;
+    padding-bottom: 1.25rem;
   }
 
   .calculator-header__hashrate-input {
     max-width: 12.5rem;
+  }
+
+  .calculator-footer {
+    padding-top: 1.25rem;
   }
 
   .graphs__tittle {
@@ -2889,6 +3067,21 @@ a:active {
   }
 }
 
+@media (hover: hover) {
+  .menu__products:hover .octicon {
+    -webkit-animation: chevron 0.2s ease 0s 1 normal forwards;
+            animation: chevron 0.2s ease 0s 1 normal forwards;
+    overflow: visible;
+  }
+
+  .menu__products:hover .octicon-chevrow-stem {
+    visibility: visible;
+    overflow: hidden;
+    -webkit-animation: stick 0.2s ease 0s 1 normal forwards;
+            animation: stick 0.2s ease 0s 1 normal forwards;
+  }
+}
+
 @media (any-hover: hover) {
   a:hover {
     outline: none;
@@ -2903,12 +3096,12 @@ a:active {
     border: 2px solid #FFFFFF;
   }
 
-  .blue-button_dark-blue {
+  .blue-button_dark-blue:hover span {
     border: 2px solid rgb(0, 64, 191);
   }
 
   .blue-button_white:hover span {
-    border: 2px solid rgb(0, 64, 191);
+    border: 3px solid rgb(0, 64, 191);
   }
 
   .mining-card:hover {
@@ -2953,6 +3146,8 @@ a:active {
     border: 0px solid rgb(54, 113, 233);
     background-color: rgb(54, 113, 233);
     border-radius: 32px;
+    -webkit-animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+    animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
   }
 
   .mining-card:hover .mining-card__button-text {
