@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20230313213029">
+	<link rel="stylesheet" href="css/style.min.css?_v=20230322142254">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -183,35 +183,69 @@
 				</div>
 			</section>
 
-			<section class="section__income-calculator income-calculator">
-				<h2 class="income-calculator__tittle">Check how much you can earn</h2>
-				<p class="income-calculator__text">Let’s check your hash rate to see how much you will earn today, Exercitation veniam consequat sunt nostrud amet.</p>
-				<div id="calculator-wrapper" class="calculator-wrapper-header">
-					<form class="income-calculator__calculator-header calculator-header">
-						<div class="calculator-header__input-fields">
-							<input id="hashrate" type="number" placeholder="Insert hashrate" class="calculator-header__hashrate-input">
-							<select name="form[]" class="form">
-								<option id="spoller-item" value="1" selected>kH/s</option>
-								<option id="spoller-item" value="2">MH/s</option>
-								<option id="spoller-item" value="3">GH/s</option>
-								<option id="spoller-item" value="4">TH/s</option>
-								<option id="spoller-item" value="4">PH/s</option>
-							</select>
+			<!-- <section class="section__income-calculator income-calculator">
+					<div class="income-calculator__body">
+						<h2 class="income-calculator__tittle">Check how much you can earn</h2>
+						<p class="income-calculator__text">Let’s check your hash rate to see how much you will earn today, Exercitation veniam consequat sunt nostrud amet.</p>
+						<div id="calculator-wrapper" class="calculator-wrapper-header">
+							<form class="income-calculator__calculator-header calculator-header">
+								<div class="calculator-header__input-fields">
+									<input id="hashrate" type="number" placeholder="Insert hashrate" class="calculator-header__hashrate-input">
+									<select name="form[]" class="form">
+										<option value="5" selected>kH/s</option>
+										<option value="4">MH/s</option>
+										<option value="3">GH/s</option>
+										<option value="2">TH/s</option>
+										<option value="1">PH/s</option>
+									</select>
+								</div>
+								<button type="submit" class="calculator-header__button_white-bg blue-button_dark-blue">
+									<span></span>
+									Calculate
+								</button>
+								<div class="income-calculator__foorter calculator-footer">
+									<div class="calculator-footer__revenue-description">ESTIMATED 24 HOUR REVENUE:</div>
+									<output id="output" class="calculator-footer__output">0.05513059 ETH</output>
+									<output id="outputUSD" class="calculator-footer__outputUSD">($1275)</output>
+									<div class="calculator-footer__note">Revenue will change based on mining difficulty and Ethereum price.</div>
+								</div>
+							</form>
 						</div>
-						<button type="button" class="calculator-header__button_white-bg blue-button_dark-blue">
-							<span></span>
-							Calculate
-						</button>
-					</form>
+					</div>
+				</section> -->
+
+			<section class="section__income-calculator income-calculator">
+				<div class="income-calculator__body">
+					<h2 class="income-calculator__tittle">Check how much you can earn</h2>
+					<p class="income-calculator__text">Let’s check your hash rate to see how much you will earn today, Exercitation veniam consequat sunt nostrud amet.</p>
+					<div id="calculator-wrapper" class="calculator-wrapper-header">
+						<form class="income-calculator__calculator-header calculator-header">
+							<div class="calculator-header__input-fields">
+								<input id="hashrate" type="number" placeholder="Insert hashrate" class="calculator-header__hashrate-input">
+								<select id="select-body" name="form[]" class="form">
+									<option value="5" selected>kH/s</option>
+									<option value="4">MH/s</option>
+									<option value="3">GH/s</option>
+									<option value="2">TH/s</option>
+									<option value="1">PH/s</option>
+								</select>
+							</div>
+							<button type="submit" class="calculator-header__button_white-bg blue-button_dark-blue">
+								<span></span>
+								Calculate
+							</button>
+						</form>
+					</div>
 				</div>
 			</section>
 
 			<section class="section__start-mining-cards start-mining-cards">
 
 				<div id="calculator-wrapper" class="calculator-wrapper-footer">
-					<div class="start-mining-cards__calculator-footer calculator-footer">
+					<div class="income-calculator__foorter calculator-footer">
 						<div class="calculator-footer__revenue-description">ESTIMATED 24 HOUR REVENUE:</div>
-						<div class="calculator-footer__revenue">0.055 130 59 ETH <span>($1275)</span></div>
+						<output id="output" class="calculator-footer__output">0.05513059 ETH</output>
+						<output id="outputUSD" class="calculator-footer__outputUSD">($1275)</output>
 						<div class="calculator-footer__note">Revenue will change based on mining difficulty and Ethereum price.</div>
 					</div>
 				</div>
@@ -372,7 +406,7 @@
 									<div class="table-body-wrapper">
 										<table class="table-body coins-table-body">
 											<tbody>
-												<tr id="table-row" class="coins-table-body__coin-item td coin-item">
+												<tr data-name="Bitcoin" id="table-row" class="coins-table-body__coin-item td coin-item">
 													<td class="td">
 														<div class="coin-item__label">
 															<div class="coin-item__icon">
@@ -396,7 +430,7 @@
 													</td>
 												</tr>
 
-												<tr id="table-row" class="coins-table-body__coin-item td coin-item">
+												<tr data-name="Ethereum" id="table-row" class="coins-table-body__coin-item td coin-item">
 													<td class="td">
 														<div class="coin-item__label">
 															<div class="coin-item__icon">
@@ -420,7 +454,7 @@
 													</td>
 												</tr>
 
-												<tr id="table-row" class="coins-table-body__coin-item td coin-item">
+												<tr data-name="Litecoin" id="table-row" class="coins-table-body__coin-item td coin-item">
 													<td class="td">
 														<div class="coin-item__label">
 															<div class="coin-item__icon">
@@ -581,7 +615,7 @@
 		</div>
 	</div>
 </div> -->
-	<script src="js/app.min.js?_v=20230313213029"></script>
+	<script src="js/app.min.js?_v=20230322142254"></script>
 </body>
 
 </html>
